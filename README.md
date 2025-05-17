@@ -12,17 +12,36 @@ Transformer-based anomaly detection framework for surveillance videos using segm
 
 ---
 
-## 🗂 Project Structure
+## 📊 Methodology
 
-- `custom_dataset/` custom videos created
-- `models/` — Trained MIL models
-- `results/` — AUC/ROC visualizations
+### Step 1: Segment-Level Feature Extraction
+
+Each video is divided into **non-overlapping segments**. For each segment (16 frames), we extract a 768-dimensional [CLS] token feature using the **TimeSformer** model.
+
+![Preprocessing Pipeline](preprocessing.jpg)
+
+> 🔹 This step converts a video into a bag of temporal embeddings:  
+> `Video = [segment_0_feat, segment_1_feat, ..., segment_N_feat]`  
 
 ---
 
-## 🧪 Preprocessing
+### Step 2: Multiple Instance Learning (MIL)
 
-Each video is split into non-overlapping segments of 16 frames. TimeSformer is used to extract a 768-D CLS feature vector per segment.
+The extracted segment features are passed through a lightweight **MIL classifier** that assigns an anomaly score to each segment. Only a weak video-level label is used during training.
+
+![Model Architecture](system_architecture.jpg)
+
+---
+
+
+### Step 4: Evaluation
+
+Each segment is compared against **manually annotated anomaly intervals** using ROC-AUC. This ensures fine-grained, interpretable performance.
+
+![ROC-AUC Curve](results/roc.PNG)
+
+![Anomaly Scores](results/anomalyscores.jpg)
+
 
 ---
 
