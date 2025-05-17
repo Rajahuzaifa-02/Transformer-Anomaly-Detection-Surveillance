@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+nest_asyncio
+streamlit
+requests
+python-multipart
+opencv-python-headless
+transformers
+altair
+pandas
+pytz
+PyJWT
+streamlit_option_menu
