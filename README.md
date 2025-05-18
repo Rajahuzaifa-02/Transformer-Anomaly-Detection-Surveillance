@@ -68,7 +68,7 @@ Each segment is compared against **manually annotated anomaly intervals** using 
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/umarzaib123/Transformer-Anomaly-Detection-Surveillance.git
+git clone https://github.com/rajahuzaifa-02/Transformer-Anomaly-Detection-Surveillance.git
 cd Transformer-Anomaly-Detection-Surveillance
 pip install -r requirements.txt
 
