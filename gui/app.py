@@ -258,7 +258,7 @@ else:
                             out.release()
             
                             final_video_path = os.path.join(tempfile.gettempdir(), "final_annotated_output.mp4")
-                            ffmpeg_path = "/home/jovyan/ffmpeg-7.0.2-amd64-static/ffmpeg"
+                            ffmpeg_path = "ffmpeg"
                             ffmpeg_command = [
                                 ffmpeg_path, "-y",
                                 "-i", annotated_path,
