@@ -137,7 +137,7 @@ trained_model = AnomalyDetectionModel().to(device)
 trained_model.load_state_dict(
     torch.load("New_model/New_Model_3/model4000.pth", map_location=torch.device('cpu'))
 )
-#trained_model.load_state_dict(torch.load("New_model/New_Model_3/model4000.pth"))
+#trained_model.load_state_dict(torch.load("../model/model4000.pth"))
 trained_model.eval()
 
 
